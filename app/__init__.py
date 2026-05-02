@@ -1,5 +1,8 @@
 from flask import Flask
 from app.routes.base_routes import base_bp
+#importamos de routes vehiculo_routes 
+from app.routes.vehiculo_routes import vehiculo_bp
+
 from app.config import Config
 from app.extensions import db
 
@@ -14,5 +17,6 @@ def create_app():
 
     # Registrar blueprints
     app.register_blueprint(base_bp)
+    app.register_blueprint(vehiculo_bp)
 
     return app

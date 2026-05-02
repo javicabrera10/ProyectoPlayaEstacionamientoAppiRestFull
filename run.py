@@ -2,6 +2,8 @@
 from app import create_app
 
 from app.extensions import db 
+#importammos la clase vehiculo
+from app.models.vehiculo import Vehiculo
 
 # aca ejecutas las funcion Se crea el objeto principal de Flask (app)
 app = create_app()
