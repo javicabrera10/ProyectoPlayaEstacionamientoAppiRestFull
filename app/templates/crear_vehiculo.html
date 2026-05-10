@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <title>Registrar Vehículo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+    <div class="card">
+
+        <h1>Registrar Vehículo</h1>
+
+        <form action="/vehiculos" method="POST">
+
+            <div class="grupo">
+
+                <label>Patente</label>
+
+                <input
+                    type="text"
+                    name="patente"
+                    placeholder="ABC123"
+                    required
+                >
+
+            </div>
+
+            <div class="grupo">
+
+                <label>Marca</label>
+
+                <input
+                    type="text"
+                    name="marca"
+                    placeholder="Toyota"
+                    required
+                >
+
+            </div>
+
+            <div class="grupo">
+
+                <label>Modelo</label>
+
+                <input
+                    type="text"
+                    name="modelo"
+                    placeholder="Corolla"
+                    required
+                >
+
+            </div>
+
+            <div class="grupo">
+
+                <label>Color</label>
+
+                <input
+                    type="text"
+                    name="color"
+                    placeholder="Negro"
+                    required
+                >
+
+            </div>
+
+            <div class="grupo">
+
+                <label>Tipo</label>
+
+                <select name="tipo">
+
+                    <option value="Auto">
+                        Auto
+                    </option>
+
+                    <option value="Moto">
+                        Moto
+                    </option>
+
+                    <option value="Camioneta">
+                        Camioneta
+                    </option>
+
+                </select>
+
+            </div>
+
+            <button type="submit">
+                Guardar Vehículo
+            </button>
+
+        </form>
+
+        <a
+            href="/vehiculos"
+            class="volver"
+        >
+            Ver vehículos
+        </a>
+        <hr>
+
+        <h2>Vehículos registrados</h2>
+
+        <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Modelo</th>
+            <th>Patente</th>
+            <th>Color</th>
+            <th>Tipo</th>
+        </tr>
+
+            {% for vehiculo in vehiculos %}
+
+            <tr>
+
+                <td>{{ vehiculo.id }}</td>
+
+                <td>{{ vehiculo.modelo }}</td>
+
+                <td>{{ vehiculo.patente }}</td>
+
+                <td>{{ vehiculo.color }}</td>
+
+                <td>{{ vehiculo.tipo }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+    </div>
+</body>
+</html>

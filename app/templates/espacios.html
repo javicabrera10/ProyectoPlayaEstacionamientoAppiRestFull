@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Espacios Disponibles</title>
+</head>
+<body>
+    <h1>Espacios Disponibles</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Número</th>
+        </tr>
+
+        {%for espacio in espacios%}
+        <tr>
+            <td>{{espacio.id}}</td>
+            <td>{{espacio.numero}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
