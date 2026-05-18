@@ -1,4 +1,3 @@
-
 #Define una función que recibe un modelo (por ejemplo Usuario, Turno, etc.)
 def get_all(model):
     return model.query.all()#model.query → accede al sistema de consultas de SQLAlchemy
